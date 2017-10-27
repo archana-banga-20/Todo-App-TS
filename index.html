@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Todo</title>
+</head>
+<body>
+<div id="root">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div id="header">
+                    TodoApp
+
+                    <div>
+                        <nav class="navbar navbar-inverse navbar-fixed-top normal" role="navigation">
+
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="index.html"><img class="img-responsive" src="public/todo.png" alt=""/></a>
+                                   <a href="index.html"><label class="imageCursor" style="color : white ; font-size : 30px">ToDo APP</label></a>
+                                </div>
+                                <div id="navbar" class="collapse navbar-collapse">
+
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><label style="color : white; fontSize : 25px" ></label>
+                                        </li>
+                                        <a href="public/about.html"> <li><label class="imageCursor" style="font-size:larger ;color : white ; fontSize : 25px">About</label>
+                                        </li></a>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </nav>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <br/> <br/> <br/> <br/>
+        <div class="inner row" style="margin-left: 30px">
+            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="child imageCursor" style="float : left;font-size: larger ; font-family: 'Book Antiqua'">
+                    <div class="form-group"  id="toggleVisibility">
+                        <img src="public/addTodo.png" style="width: 60px ; height: 60px">
+                        <p>Add Todo</p>
+                    </div>
+                </div>
+            </div>
+
+
+           <div id="hiddenAdd" class="col-lg-6 col-md-6 col-sm-6" style="padding-top : 3px;display: none; border-radius: 10px;border: lightgrey dotted;">
+               <form action="javascript:void(0)">
+               <div class="child" style="font-size: larger ; font-family: 'Book Antiqua'">
+                   <div class="form-group">
+                       <label for="title">Title:</label>
+                       <input type="text" class="form-control" id="title" placeholder="Title"/>
+                   </div>
+               </div>
+
+
+               <div class="child" style="margin-left : 60px;font-size: larger ; font-family: 'Book Antiqua'">
+                   <div class="form-group">
+                       <label for="todoTypes">Todo Type:</label><br>
+                       <select id="todoTypes" style="font-size: larger ; font-family: 'Book Antiqua'">
+                           <option value="Meeting">Meeting</option>
+                           <option value="Birthday">Birthday</option>
+                           <option value="Music">Music</option>
+                           <option value="Other">Other</option>
+                       </select>
+                   </div>
+               </div>
+
+               <div class="child" style="margin-left : 60px;font-size: larger ; font-family: 'Book Antiqua'">
+                   <br>
+                   <button type="submit" class="btn btn-primary center-block" style="text-align: center;"id="add">Add Todo</button>
+               </div>
+               </form>
+           </div>
+        </div>
+    </div>
+
+       <div style="margin-left:6%;margin-top: 3%; font-size: larger ; font-family: 'Book Antiqua'">
+           <div class="inner" >
+               <div id="Active" style="width: 250px ;margin-left: 40px" class="child">
+                   <div id="activeHead" style="background-color: mediumaquamarine ; height: 30px">
+                       <label style="margin-left : 36%;text-align: center; font-size: larger ; font-family: 'Book Antiqua'">Active</label>
+                   </div>
+                   <div id="activeBody" style="border: 1px lightgrey solid ;height: 250px;background-color: lightcyan">
+
+                   </div>
+               </div>
+
+               <div id="Complete" style=" width: 250px ;margin-left: 6%" class="child">
+                   <div id="completeHead" style="background-color: deepskyblue; height: 30px">
+                       <label style="margin-left : 36%;text-align: center; font-size: larger ; font-family: 'Book Antiqua'">Complete</label>
+                   </div>
+                   <div id="completeBody" style="border: 1px lightgrey solid ;height: 250px ;background-color: aliceblue">
+
+                   </div>
+               </div>
+
+               <div id="Delete" style="width: 250px ;margin-left: 6%" class="child">
+                   <div id="deleteHead"  style="background-color:coral;height: 30px">
+                       <label style="margin-left : 36%;text-align: center; font-size: larger ; font-family: 'Book Antiqua'">Delete</label>
+                   </div>
+                   <div id="deleteBody" style="border: 1px lightgrey solid ;height: 250px ;background-color: mistyrose">
+
+                   </div>
+               </div>
+           </div>
+
+
+    </div>
+    </div>
+        <div id="footer">
+            <div style="position: fixed; left: 0; bottom: 0; width: 100% ; background-color: black ; color: white ; text-align: left">
+            2017 | ToDoApp
+        </div>
+        </div>
+</div>
+
+</body>
+<script src="public/script.js"></script>
+<script src=".\todo.js"></script>
+<script>
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 150) {
+            $('.navbar').addClass('shrink');
+        }
+        else {
+            $('.navbar').removeClass('shrink'); }
+    });
+
+</script>
+</html>
